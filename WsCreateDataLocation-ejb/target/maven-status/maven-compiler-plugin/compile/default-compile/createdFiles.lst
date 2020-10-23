@@ -1,7 +1,0 @@
-co\com\claro\otpQueryCVC\util\EJBConstants$MENSAJE_EXCEPCION.class
-co\com\claro\otpQueryCVC\util\EJBConstants.class
-co\com\claro\otpQueryCVC\facade\AbstractFacade.class
-co\com\claro\otpQueryCVC\util\EJBUtils.class
-co\com\claro\otpQueryCVC\util\EJBConstants$CODIGO_EXCEPCION.class
-co\com\claro\otpQueryCVC\entity\CodigoscvcOtp_.class
-co\com\claro\otpQueryCVC\dao\AbstractDao.class
