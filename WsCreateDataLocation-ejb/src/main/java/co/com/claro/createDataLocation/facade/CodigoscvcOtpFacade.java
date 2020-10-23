@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.claro.otpQueryCVC.facade;
+package co.com.claro.createDataLocation.facade;
 
-import co.com.claro.otpQueryCVC.entity.CodigoscvcOtp;
+import co.com.claro.createDataLocation.entity.CodigoscvcOtp;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

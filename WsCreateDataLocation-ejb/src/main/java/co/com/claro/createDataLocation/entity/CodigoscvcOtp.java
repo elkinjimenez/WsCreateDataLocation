@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.claro.otpQueryCVC.entity;
+package co.com.claro.createDataLocation.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -177,7 +177,7 @@ public class CodigoscvcOtp implements Serializable {
 
     @Override
     public String toString() {
-        return "co.com.claro.otpQueryCVC.entity.CodigoscvcOtp[ idRegister=" + idRegister + " ]";
+        return "co.com.claro.createDataLocation.entity.CodigoscvcOtp[ idRegister=" + idRegister + " ]";
     }
 
 }

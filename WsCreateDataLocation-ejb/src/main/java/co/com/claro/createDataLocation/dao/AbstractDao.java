@@ -1,4 +1,4 @@
-package co.com.claro.otpQueryCVC.dao;
+package co.com.claro.createDataLocation.dao;
 
 import java.util.Iterator;
 import java.util.List;

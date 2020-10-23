@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.claro.otpQueryCVC.ws;
+package co.com.claro.createDataLocation.ws;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
@@ -29,7 +29,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(co.com.claro.otpQueryCVC.ws.otpQueryCVCService.class);
+        resources.add(co.com.claro.createDataLocation.ws.createDataLocationService.class);
     }
     
 }

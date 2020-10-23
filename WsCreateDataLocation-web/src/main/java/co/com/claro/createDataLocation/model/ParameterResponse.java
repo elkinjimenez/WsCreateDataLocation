@@ -1,6 +1,6 @@
-package co.com.claro.otpQueryCVC.model;
+package co.com.claro.createDataLocation.model;
 
-import co.com.claro.otpQueryCVC.entity.CodigoscvcOtp;
+import co.com.claro.createDataLocation.entity.CodigoscvcOtp;
 import java.util.List;
 import lombok.*;
 

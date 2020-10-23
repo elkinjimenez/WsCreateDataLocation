@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.claro.otpQueryCVC.ws;
+package co.com.claro.createDataLocation.ws;
 
-import co.com.claro.otpQueryCVC.entity.CodigoscvcOtp;
-import co.com.claro.otpQueryCVC.facade.CodigoscvcOtpFacade;
+import co.com.claro.createDataLocation.entity.CodigoscvcOtp;
+import co.com.claro.createDataLocation.facade.CodigoscvcOtpFacade;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import co.com.claro.otpQueryCVC.model.GenericResponse;
-import co.com.claro.otpQueryCVC.model.ParameterResponse;
+import co.com.claro.createDataLocation.model.GenericResponse;
+import co.com.claro.createDataLocation.model.ParameterResponse;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import java.util.List;
@@ -22,15 +22,15 @@ import java.util.List;
  *
  * @author omarMad
  */
-@Path("otpQueryCVC")
+@Path("createDataLocation")
 @Stateless
 @TransactionManagement
-public class otpQueryCVCService {
+public class createDataLocationService {
 
     @EJB
     private CodigoscvcOtpFacade codigosCVCFacade;
 
-    public otpQueryCVCService() {
+    public createDataLocationService() {
     }
 
     @GET

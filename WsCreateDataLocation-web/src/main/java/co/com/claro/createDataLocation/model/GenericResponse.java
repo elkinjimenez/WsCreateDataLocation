@@ -1,4 +1,4 @@
-package co.com.claro.otpQueryCVC.model;
+package co.com.claro.createDataLocation.model;
 
 import lombok.Getter;
 import lombok.Setter;
