@@ -30,8 +30,8 @@ public class DatosUbicacionFacade extends AbstractFacade<DatosUbicacion> {
         super(DatosUbicacion.class);
     }
 
-    public List<DatosUbicacion> listado() {
-        List<DatosUbicacion> lista = (List<DatosUbicacion>) em.createQuery("SELECT d FROM DatosUbicacion d").getResultList();
+    public List<DatosUbicacion> listado(String documento, String tipo) {
+        List<DatosUbicacion> lista = (List<DatosUbicacion>) em.createQuery("SELECT d FROM DatosUbicacion d WHERE d.numeroIdentificacion='" + documento + "' AND d.tipoIdentificacion='" + tipo + "'").getResultList();
         return lista;
     }
 }

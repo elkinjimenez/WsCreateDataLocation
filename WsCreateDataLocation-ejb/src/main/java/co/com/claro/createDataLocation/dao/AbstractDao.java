@@ -87,15 +87,6 @@ public abstract class AbstractDao<T> {
 
     /**
      *
-     * @param id
-     * @return T
-     */
-    public T find(Object id) {
-        return getEntityManager().find(entityClass, id);
-    }
-
-    /**
-     *
      * @return List
      */
     public List<T> findAll() {

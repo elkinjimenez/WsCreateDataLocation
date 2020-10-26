@@ -8,8 +8,6 @@ package co.com.claro.createDataLocation.entity;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -25,27 +23,21 @@ import lombok.Setter;
 @Entity
 @Table(name = "DATOS_UBICACION", schema = "FRAUDE")
 @NamedQueries(
-        @NamedQuery(name = "DatosUbicacion.finAll", query = "SELECT d FROM DatosUbicacion d"))
+        @NamedQuery(name = "DatosUbicacion.findAll", query = "SELECT d.nombreORazonSocial, d.numeroIdentificacion, d.tipoIdentificacion FROM DatosUbicacion d"))
 public class DatosUbicacion implements Serializable {
 
     @Getter
     @Setter
     @Id
     @Size(max = 10)
-    @Column(name = "ID")
-    private Long id;
+    @Column(name = "NUMERO_IDENTIFICACION")
+    private String numeroIdentificacion;
 
     @Getter
     @Setter
     @Size(max = 1)
     @Column(name = "TIPO_IDENTIFICACION")
     private String tipoIdentificacion;
-
-    @Getter
-    @Setter
-    @Size(max = 10)
-    @Column(name = "NUMERO_IDENTIFICACION")
-    private String numeroIdentificacion;
 
     @Getter
     @Setter

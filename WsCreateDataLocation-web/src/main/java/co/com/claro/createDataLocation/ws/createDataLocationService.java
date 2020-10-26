@@ -37,15 +37,17 @@ public class createDataLocationService {
     @Consumes("application/json")
     @Produces("application/json")
     @Path("queryData")
-    public DatosUbicaResponse queryData() {
+    public DatosUbicaResponse queryData(@QueryParam("documentType") String documentType, @QueryParam("documentNumber") String documentNumber) {
         DatosUbicaResponse response = new DatosUbicaResponse();
         try {
-            List<DatosUbicacion> listado = datosUbiFacade.findAll();
+            documentType = documentType.replaceAll("\"", "").replaceAll("\'", "");
+            documentNumber = documentNumber.replaceAll("\"", "").replaceAll("\'", "");
+            List<DatosUbicacion> listado = datosUbiFacade.listado(documentNumber, documentType);
             response.setDataLocation(listado);
             GenericResponse responseG = new GenericResponse(true, "true");
             response.setResponse(responseG);
         } catch (Exception e) {
-            GenericResponse responseG = new GenericResponse(false, "Error: " + e.getMessage());
+            GenericResponse responseG = new GenericResponse(false, "Error: " + e);
             response.setResponse(responseG);
         }
         return response;
