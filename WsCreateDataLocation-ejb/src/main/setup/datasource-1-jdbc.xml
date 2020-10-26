@@ -2,16 +2,16 @@
 <jdbc-data-source xmlns="http://xmlns.oracle.com/weblogic/jdbc-data-source">
   <name>jdbc/dataLocation</name>
   <jdbc-driver-params>
-    <url>jdbc:oracle:thin:@//100.126.0.149:1521/INSLEGACY.COMCEL.COM.CO</url>
+    <url>jdbc:oracle:thin:@10.244.143.176:1524:prufac</url>
     <driver-name>oracle.jdbc.OracleDriver</driver-name>
     <properties>
       <property>
         <name>user</name>
-        <value>INSP_LISTAS</value>
+        <value>avanza</value>
       </property>
       <property>
         <name>password</name>
-        <value>1NSP_L1ST45_D3v</value>
+        <value>G3n3rico20_20</value>
       </property>
     </properties>
   </jdbc-driver-params>

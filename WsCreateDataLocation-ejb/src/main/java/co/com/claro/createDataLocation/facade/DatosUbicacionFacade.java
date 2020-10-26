@@ -5,7 +5,7 @@
  */
 package co.com.claro.createDataLocation.facade;
 
-import co.com.claro.createDataLocation.entity.CodigoscvcOtp;
+import co.com.claro.createDataLocation.entity.DatosUbicacion;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author jimenezelkg
  */
 @Stateless
-public class CodigoscvcOtpFacade extends AbstractFacade<CodigoscvcOtp> {
+public class DatosUbicacionFacade extends AbstractFacade<DatosUbicacion> {
 
     @PersistenceContext(unitName = "UpdateCase")
     private EntityManager em;
@@ -26,13 +26,13 @@ public class CodigoscvcOtpFacade extends AbstractFacade<CodigoscvcOtp> {
         return em;
     }
 
-    public CodigoscvcOtpFacade() {
-        super(CodigoscvcOtp.class);
+    public DatosUbicacionFacade() {
+        super(DatosUbicacion.class);
     }
 
-    public List<CodigoscvcOtp> searchCode(String code) {
-        List<CodigoscvcOtp> cod = (List<CodigoscvcOtp>) em.createQuery("SELECT c FROM CodigoscvcOtp c WHERE c.custcodeAgente='" + code + "'").getResultList();
-        return cod;
+    public List<DatosUbicacion> listado() {
+        List<DatosUbicacion> lista = (List<DatosUbicacion>) em.createQuery("SELECT d FROM DatosUbicacion d").getResultList();
+        return lista;
     }
 
 }
