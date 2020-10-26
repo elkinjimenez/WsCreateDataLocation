@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class DatosUbicacionFacade extends AbstractFacade<DatosUbicacion> {
 
-    @PersistenceContext(unitName = "UpdateCase")
+    @PersistenceContext(unitName = "DataLocationPersistense")
     private EntityManager em;
 
     @Override
@@ -34,5 +34,4 @@ public class DatosUbicacionFacade extends AbstractFacade<DatosUbicacion> {
         List<DatosUbicacion> lista = (List<DatosUbicacion>) em.createQuery("SELECT d FROM DatosUbicacion d").getResultList();
         return lista;
     }
-
 }

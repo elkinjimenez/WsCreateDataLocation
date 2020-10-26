@@ -7,13 +7,13 @@ package co.com.claro.createDataLocation.ws;
 
 import co.com.claro.createDataLocation.entity.DatosUbicacion;
 import co.com.claro.createDataLocation.facade.DatosUbicacionFacade;
-import co.com.claro.createDataLocation.model.DatosUbicaResponse;
-import co.com.claro.createDataLocation.model.GenericResponse;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import co.com.claro.createDataLocation.model.GenericResponse;
+import co.com.claro.createDataLocation.model.DatosUbicaResponse;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import java.util.List;
@@ -36,27 +36,27 @@ public class createDataLocationService {
     @GET
     @Consumes("application/json")
     @Produces("application/json")
-    @Path("test")
-    public DatosUbicaResponse test() {
+    @Path("queryData")
+    public DatosUbicaResponse queryData() {
         DatosUbicaResponse response = new DatosUbicaResponse();
         try {
-            List<DatosUbicacion> em = datosUbiFacade.listado();
-            response.setDataLocation(em);
-            GenericResponse responseG = new GenericResponse(true, "Listado correcto.");
+            List<DatosUbicacion> listado = datosUbiFacade.findAll();
+            response.setDataLocation(listado);
+            GenericResponse responseG = new GenericResponse(true, "true");
             response.setResponse(responseG);
         } catch (Exception e) {
-            GenericResponse responseG = new GenericResponse(false, "Error: " + e);
+            GenericResponse responseG = new GenericResponse(false, "Error: " + e.getMessage());
             response.setResponse(responseG);
         }
         return response;
     }
-    
+
 //    @GET
 //    @Consumes("application/json")
 //    @Produces("application/json")
 //    @Path("searchCode")
-//    public ParameterResponse searchCode(@QueryParam("code") String code) {
-//        ParameterResponse response = new ParameterResponse();
+//    public DatosUbicaResponse searchCode(@QueryParam("code") String code) {
+//        DatosUbicaResponse response = new DatosUbicaResponse();
 //        try {
 //            code = code.replaceAll("\"", "");
 //            code = code.replaceAll("\'", "");

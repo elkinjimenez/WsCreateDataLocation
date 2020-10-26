@@ -6,14 +6,15 @@
 package co.com.claro.createDataLocation.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,9 +23,17 @@ import lombok.Setter;
  * @author jimenezelkg
  */
 @Entity
-@Table(name = "DATOS_UBICACION")
-@XmlRootElement
-public class DatosUbicacion {
+@Table(name = "DATOS_UBICACION", schema = "FRAUDE")
+@NamedQueries(
+        @NamedQuery(name = "DatosUbicacion.finAll", query = "SELECT d FROM DatosUbicacion d"))
+public class DatosUbicacion implements Serializable {
+
+    @Getter
+    @Setter
+    @Id
+    @Size(max = 10)
+    @Column(name = "ID")
+    private Long id;
 
     @Getter
     @Setter
@@ -43,11 +52,5 @@ public class DatosUbicacion {
     @Size(max = 100)
     @Column(name = "NOMBRE_O_RAZON_SOCIAL")
     private String nombreORazonSocial;
-
-    @Getter
-    @Setter
-    @Column(name = "FECHA_CARGUE")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date FechaCargue;
 
 }
